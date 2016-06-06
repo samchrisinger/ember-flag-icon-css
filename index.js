@@ -24,17 +24,16 @@ module.exports = {
         var flagsFunnel = new Funnel(
             this.app.trees.bower, {
                 srcDir: path.join('flag-icon-css', 'flags'),
-		destDir: path.join('assets', 'flags')
+                destDir: path.join('assets', 'flags')
             }
         );
-	var cssFunnel = new Funnel(
-	    this.app.trees.bower,
-	    {
-		srcDir: path.join('flag-icon-css', 'css'),
-		destDir: path.join('assets', 'css')
-	    }
-	);
-	
+        var cssFunnel = new Funnel(
+            this.app.trees.bower, {
+                srcDir: path.join('flag-icon-css', 'css'),
+                destDir: path.join('assets', 'css')
+            }
+        );
+
         return mergeTrees([flagsFunnel, cssFunnel, baseTree, tree].filter(Boolean));
     }
 };
