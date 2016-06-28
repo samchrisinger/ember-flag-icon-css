@@ -19,7 +19,7 @@ function mergeTrees(inputTree, options) {
 module.exports = {
     name: 'ember-flag-icon-css',
     treeForPublic: function(tree) {
-        var baseTree = this._super.treeForPublic(...arguments);
+        var baseTree = this._super.treeForPublic.apply(this, arguments);
 
         var flagsFunnel = new Funnel(
             this.app.trees.bower, {
